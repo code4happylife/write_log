@@ -1,4 +1,4 @@
-name: Automatically crawl CVEs 
+name: Automatically write logs 
 on:
   schedule:
     - cron:  '15 * * * *'
