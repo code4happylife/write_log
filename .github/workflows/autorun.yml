@@ -1,0 +1,35 @@
+name: Automatically crawl CVEs 
+on:
+  schedule:
+    - cron:  '15 * * * *'
+
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Check out repo
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+
+
+
+    - name: Crawl CVEs
+      run: |-
+        python main.py
+
+    - name: Commit and push Github page (if changed)
+      run: |-
+        git diff
+        git config --global user.email "github-bot@example.com"
+        git config --global user.name "Github-Bot"
+        git add -A
+        git commit -m "Updated by Github Bot" || exit 0
+        git push
+
