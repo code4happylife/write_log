@@ -15,10 +15,8 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
-
-    - name: Write Logs
-      run:  python main.py
+        python-version: '3.8'
+    - run:  python main.py
 
     - name: Commit and push Github page (if changed)
       run: |-
