@@ -1,4 +1,4 @@
-name: Automatically write logs 
+name: Automatically and periodically write logs
 on:
   schedule:
     - cron:  '15 * * * *'
@@ -17,12 +17,9 @@ jobs:
       with:
         python-version: 3.8
 
-
-
-
-    - name: Crawl CVEs
+    - name: Write Logs
       run: |-
-        python main.py
+        python3 main.py
 
     - name: Commit and push Github page (if changed)
       run: |-
