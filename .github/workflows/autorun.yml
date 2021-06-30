@@ -19,7 +19,7 @@ jobs:
 
     - name: Write Logs
       run: |-
-        python3 main.py
+        python main.py
 
     - name: Commit and push Github page (if changed)
       run: |-
