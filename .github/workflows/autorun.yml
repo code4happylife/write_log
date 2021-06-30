@@ -18,8 +18,7 @@ jobs:
         python-version: 3.8
 
     - name: Write Logs
-      run: |-
-        python main.py
+      run:  python main.py
 
     - name: Commit and push Github page (if changed)
       run: |-
