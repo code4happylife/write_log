@@ -1,7 +1,7 @@
 name: Automatically and periodically write logs
 on:
   schedule:
-    - cron:  '15 * * * *'
+    - cron:  '* * 2 * *'
 
 
 jobs:
